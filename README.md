@@ -1,9 +1,11 @@
 # cyberpedia
 semi-interactive reference to cyberpunk media; vue.js prototype 
 
-Wanted to a project to learn the core fucntionality of vue.js framework
-Also been compiling a lsit of cyberpunk movies with notes in evernote, wanted a sortable, public version to share
+Wanted to learn vue.js framework, best way to learn is to do
+Also been compiling a comprehensive list of cyberpunk movies with notes in evernote and wanted a sortable, public version to share
 Hence I've hacked out this SPA
+
+It is curently a very impomplete prototype. I wil lcontinue to develop it until i don't
 
 Currently has no external depenacies 
 (not counting cdn link to vue library & google font link)
