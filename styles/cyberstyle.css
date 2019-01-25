@@ -1,0 +1,157 @@
+/* -------------- Appstyles ----------------*/
+/*-------------------------------------------*/
+*{
+	box-sizing: border-box;
+}
+body{
+	background: url(../assets/imgs/bg/white-noise-animated-wallpaper-1024x592.gif);
+	font-family: sans-serif;
+	font-family: 'VT323', monospace;
+	/*font-family: 'Overpass Mono', monospace;*/
+	
+}
+#cyberapp{
+	position: relative;
+	max-width:990px;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	background-color: rgba(1,1,1,0.8);
+	color:rgba(256,256,256,1);
+	border-radius: 1rem;
+}
+
+/* -------------- Header Styles ----------------*/
+/*-------------------------------------------*/
+#header{
+	width: 100%;
+	margin: 1rem auto 2rem;
+	text-align: center;
+}
+h1{
+	width: auto;
+	margin: 0.1rem auto;
+	text-align: center;
+	font-size: 2.5rem;
+	font-family: 'Share Tech Mono', monospace;
+}
+h1 em { 
+	padding-right:0.22rem;
+	color:rgba(255,0,0,1);
+}
+
+#header h2{
+	display: inline-block;
+	width: auto;
+	margin: 0.1rem 0;
+	padding: 0.4rem 0.1rem;
+	text-align: center;
+	font-size: 1.25rem;
+	font-family: 'Share Tech Mono', monospace;
+	border-top: 2px solid rgba(255,1,1,1);
+}
+#header p{
+	display: inline-block;
+	width: auto;
+	margin: 0.1rem auto;
+	padding: 0.1rem 0.1rem;
+	text-align: center;
+	font-size: 1rem;
+}
+
+#main{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/* -------------- Index styles ----------------*/
+/*-------------------------------------------*/
+#title-index{
+	position: absolute;
+	width: 20%;
+	height: 100%;
+	top: 1rem;
+	left:1rem;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+#title-index ul {
+  margin: 0;
+  width: auto;
+  padding: 0;
+}
+#title-index ul li{
+  margin: 0;
+  width: auto;
+  padding: 0 0 0.2rem;
+  white-space: nowrap;
+}
+#title-index ul li a{
+	display: block;
+}
+
+/* -------------- Detail Styles ----------------*/
+/*-------------------------------------------*/
+#title-detail{
+	display: block;
+	position: relative;
+	left: 24%;
+	width: 75%;
+	padding: 1.25rem 1rem 2rem;
+	border: 1px solid rgba(125,125,125,0.5);
+	border-radius: 0 0 1rem 0;
+}
+#title-detail h2{
+	display: block;
+	margin-top: 0;
+	width: 100%;
+	padding: 0 1rem;
+	font-size: 1.4rem;
+	background-color: rgba(255,255,255,1);
+	color:rgba(1,1,1,1);
+}
+#title-detail h3{
+	display: inline-block;
+	margin-top: 0;
+	padding: 0 1rem;
+	width: auto;
+	font-size: 1.25rem;
+	/*background-color: rgba(255,255,255,1);
+	color:rgba(1,1,1,1);*/
+}
+#title-detail h3.rank{
+	display: inline-block;
+	float: right;
+	margin-top: 0;
+	width: auto;
+	font-size: 1.25rem;
+}
+#title-detail h3.rank strong {
+	color:rgba(255,1,1,1);
+}
+#title-detail h4{
+	display: inline-block;
+	margin: 0.25rem 0 0;
+	/*width: 100%;*/
+	font-size: 1.1rem;
+	/*background-color: rgba(255,255,255,1);
+	color:rgba(1,1,1,1)*/;
+}
+#title-detail p{
+	display: inline-block;
+	margin: 0 0 2rem;
+	/*width: 100%;*/
+	font-size: 1rem;
+	/*background-color: rgba(255,255,255,1);
+	color:rgba(1,1,1,1)*/;
+}
+#detail-main{
+	padding: 0.2rem 1rem;
+	width: 66%;
+}
+.title-poster{
+	position: absolute;
+	top:5rem;
+	right: 1rem;
+}

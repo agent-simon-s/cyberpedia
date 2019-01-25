@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cyberpedia: {{title}}</title>
+	<link href="https://fonts.googleapis.com/css?family=Overpass+Mono|Share+Tech+Mono|VT323" rel="stylesheet">
+	<link rel="stylesheet" href="styles/cyberstyle.css">
+</head>
+<body>
+
+	<div id="cyberapp">
+		<div id="header">
+			<hgroup>
+				<h1><em>Cyber</em>pedia</h1>
+				<h2>20minutes into the future, 20 years ago.</h2>
+				<p>A highly subjective survey + referance to cyberpunk in media. Film, Television and Annimation</p>
+			</hgroup>
+		</div>
+		<div id="main">
+			<div id="title-index">
+				Selection-criteria: 
+				<select name="" id="">
+					<option value="">Overall Rating</option>
+				</select>
+				<hr>
+				<ul>
+					<!-- <li v-for="title in titles" key:"title.title" <a @click="selectTitle(title.title)">me{{this.title}}: <em>{{title.year}}</em></a></li> -->
+					<li v-for="option in options" :key="option.title">
+						<a>{{option.title}}: <em>{{option.year}}</em></a>
+					</li>
+					<!-- <li> <a @click="selectTitle(title)">{{title}}: <em>{{year}}</em></a></li> -->
+				</ul>
+			</div>
+			<div class="title-detail-container">	
+				<div id="title-detail">
+					<div class="detail-head">
+						<h2>{{title}} - <em>{{year}}</em></h2> 
+						<h3>Director: {{director}}</h3><h3 class="rank">OVERALL RANK: <strong>{{rank}}</strong></h3>
+						<p><span class="flag-yes" v-show="cyscore > 60">It's <em>Cyberpunk</em></span> <span class="flag-yes" v-show="cyscore <= 50 && cyscore > 25">It's <em>Cyberpunk adjacent</em></span>
+						 <span class="flag-yes" v-show="funscore > 50">:)</p>
+					</div>
+					<div id="detail-main">
+						Screenplay: {{writer}}<br>
+						Running Time:{{time}}<br>
+						Language: {{lang}} <br>
+						Format: {{format}} <br>
+						Tomato: {{tomato}} <br>
+						Siscore: {{siscore}} <br>
+						Cyscore: {{cyscore}} <br>
+						Funscore: {{funscore}} <br>
+						<span class="flag-yes" v-if="flag">Flag True</span>
+						<span class="flag-no" v-else="flag">Flag False</span><br>
+						<br>
+
+						<h4>Summary:</h4>
+						<p>{{summary}}</p> 
+						<h4>Review: </h4>
+						<p>{{review}}</p>
+					</div>	
+					<figure class="title-poster">
+						<img v-bind:src="poster" alt="">
+					</figure>
+					Reader Likes: {{ readerResp }}% <button v-on:click="addLike">Like</button> <button v-on:click="addDislike">DisLike</button>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			
+		</div>
+
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/main.js"></script>
+	
+	
+</body>
+</html>
