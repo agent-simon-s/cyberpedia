@@ -26,10 +26,10 @@
 				<hr>
 				<ul>
 					<!-- <li v-for="title in titles" key:"title.title" <a @click="selectTitle(title.title)">me{{this.title}}: <em>{{title.year}}</em></a></li> -->
-					<li v-for="(option, index) in options" 
-					  :key="option.title"
+					<li v-for="(title, index) in titles" 
+					  :key="title.name"
 					  @click="selectViewTitle(index)">
-						<a>{{option.title}}: <em>{{option.year}}</em></a>
+						<a>{{title.name}}: <em>{{title.year}}</em></a>
 					</li>
 					<!-- <li> <a >{{title}}: <em>{{year}}</em></a></li> -->
 				</ul>
@@ -38,27 +38,27 @@
 				<div id="title-detail">
 					<div class="detail-head">
 						<h2>{{viewTitleName}} - <em>{{viewTitleYear}}</em></h2> 
-						<h3>Director: {{viewTitleDirector}}</h3><h3 class="rank">OVERALL RANK: <strong>{{rank}}</strong></h3>
+						<h3>Director: {{viewTitleDirector}}</h3><h3 class="rank">OVERALL RANK: <strong>{{viewTitleRank}}</strong></h3>
 						<p><span class="flag-yes" v-show="cyscore > 60">It's <em>Cyberpunk</em></span> <span class="flag-yes" v-show="cyscore <= 50 && cyscore > 25">It's <em>Cyberpunk adjacent</em></span>
 						 <span class="flag-yes" v-show="funscore > 50">:)</p>
 					</div>
 					<div id="detail-main">
-						Screenplay: {{screenplay}}<br>
-						Running Time:{{time}}<br>
-						Language: {{lang}} <br>
-						Format: {{format}} <br>
-						Tomato: {{tomato}} <br>
-						Siscore: {{siscore}} <br>
-						Cyscore: {{cyscore}} <br>
-						Funscore: {{funscore}} <br>
+						Screenplay: {{viewTitleScreenplay}}<br>
+						Running Time:{{viewTitleTime}}<br>
+						Language: {{viewTitleLang}} <br>
+						Format: {{viewTitleFormat}} <br>
+						Tomato: {{viewTitleTomato}} <br>
+						Siscore: {{viewTitleSiscore}} <br>
+						Cyscore: {{viewTitleCyscore}} <br>
+						Funscore: {{viewTitleFunscore}} <br>
 						<span class="flag-yes" v-if="flag">Flag True</span>
 						<span class="flag-no" v-else="flag">Flag False</span><br>
 						<br>
 
 						<h4>Summary:</h4>
-						<p>{{summary}}</p> 
+						<p>{{viewTitleSummary}}</p> 
 						<h4>Review: </h4>
-						<p>{{review}}</p>
+						<p>{{viewTitleReview}}</p>
 					</div>	
 					<figure class="title-poster">
 						<img v-bind:src="poster" alt="">
