@@ -8,16 +8,27 @@ var app = new Vue({
 		addDislike(){
 			this.readervotes +=1
 		},
-		selectTitle(){
-			this.title = title.title
+		selectViewTitle(index){
+			this.viewTitle = index
+			console.log(index);
 		}
 	},
 	computed:{
 		readerResp(){
 			return (this.readerlikes / this.readervotes) *100
-		}
+		},
+		viewTitleName(){
+			return this.options[this.viewTitle].title
+		},
+		viewTitleYear(){
+			return this.options[this.viewTitle].year
+		},
+		viewTitleDirector(){
+			return this.options[this.viewTitle].director
+		},
 	},
-	data: {
+	data: {	
+				viewTitle:0,
 				title: 'Blade Runner',
 				rank: 01,
 				director: 'Ridley Scott',
@@ -39,19 +50,23 @@ var app = new Vue({
 				options: [
 					{
 						title:'Blade Runner', 
-						year: '1982'
+						year: '1982',
+						director: 'Ridley Scott'
 					},
 					{
 						title:'Akira', 
-						year: '1988'
+						year: '1988',
+						director: 'b'
 					},
 					{
 						title:'Max Headroom 20m into the future', 
-						year: '1985'
+						year: '1985',
+						director: 'c'
 					},
 					{
 						title:'12 Moknkeys', 
-						year: '1995'
+						year: '1995',
+						director: 'Gilliam'
 					},
 					{
 						title:'Robocop', 
