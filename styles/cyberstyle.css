@@ -10,6 +10,13 @@ body{
 	/*font-family: 'Overpass Mono', monospace;*/
 	
 }
+a{
+	color:rgba(256,256,256,1);
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
 #cyberapp{
 	position: relative;
 	max-width:990px;
@@ -19,14 +26,64 @@ body{
 	color:rgba(256,256,256,1);
 	border-radius: 1rem;
 }
-
-/* -------------- Header Styles ----------------*/
+/* -------------- Primary Content-block Styles ----------------*/
 /*-------------------------------------------*/
 #header{
 	width: 100%;
-	margin: 1rem auto 2rem;
+	margin: 1rem auto 0.8rem;
 	text-align: center;
 }
+#main-body{
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.title-index-container{
+	display: flex;
+	flex-flow: row-reverse nowrap;
+	height: 25%;
+	width: 100%;
+}
+.title-detail-container{
+	height: 75%;
+	width: 100%;
+}
+@media all and (min-width: 700px) { 
+	#main-body { 
+		flex-flow: row nowrap; 
+	}
+	.title-index-container{
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+		height: 100%;
+		width: 25%;
+	}
+	.title-detail-container{
+		height: 100%;
+		width: 70%;
+	}
+}
+@media all and (min-width: 770px) { 
+	#main-body { 
+		flex-flow: row nowrap; 
+	}
+	.title-index-container{
+		display: flex;
+		flex-flow: column nowrap;
+		height: 100%;
+		width: 21%;
+	}
+	.title-detail-container{
+		height: 100%;
+		width: 76%;
+	}
+}
+/* -------------- Header Styles ----------------*/
+/*-------------------------------------------*/
 h1{
 	width: auto;
 	margin: 0.1rem auto;
@@ -57,26 +114,52 @@ h1 em {
 	text-align: center;
 	font-size: 1rem;
 }
-
-#main{
-	display: block;
-	position: relative;
-	width: 100%;
-	height: 100%;
+#main-nav{
+	width: 100;
+	text-align: center;
 }
-
+#main-nav ul{
+	margin-top: 0.2rem;
+	padding: 0;
+	list-style: none;
+}
+#main-nav ul li{
+	display: inline-block;
+	padding: 0.3rem 0.9rem;
+}
 /* -------------- Index styles ----------------*/
 /*-------------------------------------------*/
+.selection-criteria{
+	max-height: 10rem;
+	padding: 0.33rem;
+	background-color: rgba(60,60,60,0.8);
+}
+.selection-criteria select {
+	width: 98%;
+}
 #title-index{
-	position: absolute;
-	width: 20%;
-	height: 100%;
-	top: 1rem;
-	left:1rem;
+	max-height: 10rem;
+	padding: 0;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
-#title-index ul {
+@media all and (min-width: 700px) { 
+	.selection-criteria{
+		margin-bottom: 0.2rem;
+		height: 30%;
+		max-height: 10rem;
+		padding: 0.33rem;
+		background-color: rgba(60,60,60,0.8);
+	}
+	#title-index{
+		height: auto;
+		max-height: 30rem;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+}
+
+#title-index ul{
   margin: 0;
   width: auto;
   padding: 0;
@@ -84,24 +167,43 @@ h1 em {
 #title-index ul li{
   margin: 0;
   width: auto;
-  padding: 0 0 0.2rem;
+  padding: 0 0.2rem;
   white-space: nowrap;
 }
 #title-index ul li a{
 	display: block;
+	padding: 0 0.33rem;
 }
+#title-index ul li a:hover{
+	color: rgba(60,60,60,1);
+	background-color: rgba(256,256,256,0.9);
+	text-decoration: none;
+}
+/*#title-index ul li a:hover{
+	color: rgba(60,60,60,1);
+	background-color: rgba(256,256,256,0.8);
+}*/
 
 /* -------------- Detail Styles ----------------*/
 /*-------------------------------------------*/
+
 #title-detail{
 	display: block;
 	position: relative;
-	left: 24%;
-	width: 75%;
+	/*left: 24%;
+	width: 75%;*/
 	padding: 1.25rem 1rem 2rem;
 	border: 1px solid rgba(125,125,125,0.5);
 	border-radius: 0 0 1rem 0;
 }
+@media all and (min-width: 700px) { 
+	#title-index{
+		max-height: 30rem;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+}
+
 #title-detail h2{
 	display: block;
 	margin-top: 0;
@@ -154,4 +256,11 @@ h1 em {
 	position: absolute;
 	top:5rem;
 	right: 1rem;
+	width: 25%;
+	height: 50%;
+}
+.title-poster img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
