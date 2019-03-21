@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
 	<title>Cyberpedia: {{title}}</title>
 	<link href="https://fonts.googleapis.com/css?family=Overpass+Mono|Share+Tech+Mono|VT323" rel="stylesheet">
 	<link rel="stylesheet" href="styles/cyberstyle.css">
@@ -17,22 +18,41 @@
 				<p>A highly subjective survey + referance to cyberpunk in media. Film, Television and Annimation</p>
 			</hgroup>
 		</div>
-		<div id="main">
-			<div id="title-index">
-				Selection-criteria: 
-				<select name="" id="">
-					<option value="">Overall Rating</option>
-				</select>
-				<hr>
-				<ul>
-					<!-- <li v-for="title in titles" key:"title.title" <a @click="selectTitle(title.title)">me{{this.title}}: <em>{{title.year}}</em></a></li> -->
-					<li v-for="(title, index) in titles" 
-					  :key="title.name"
-					  @click="selectViewTitle(index)">
-						<a>{{title.name}}: <em>{{title.year}}</em></a>
-					</li>
-					<!-- <li> <a >{{title}}: <em>{{year}}</em></a></li> -->
-				</ul>
+		<nav id="main-nav">
+			<ul>
+				<li><a href="">About Cyberpunk</a></li>
+				<li><a href="">About Us</a></li>
+				<li><a href="">Links</a></li>
+			</ul>
+		</nav>
+		<div id="main-body">
+			<div class="title-index-container">
+
+				<div class="selection-criteria">
+					Selection-criteria: 
+					<select name="" id="">
+						<option value="">Overall Rating</option>
+					</select>
+					<div class="igroup">
+						<input type="checkbox" name="checkbox" id="checkbox_id" value="value" disabled><label for="checkbox_id">True Cyberpunk only</label>
+					</div>
+					<div class="igroup">
+						<input type="checkbox" name="checkbox" id="checkbox_id" value="value" disabled><label for="checkbox_id">New Releases</label>
+					</div>
+				</div>
+				<div id="title-index">
+					<ul>
+						<!-- <li v-for="title in titles" key:"title.title" <a @click="selectTitle(title.title)">me{{this.title}}: <em>{{title.year}}</em></a></li> -->
+						<li v-for="(title, index) in titles" 
+						  :key="title.name"
+						  @click="selectViewTitle(index)">
+							<a>{{title.name}}: <em>{{title.year}}</em></a>
+						</li>
+						<!-- <li> <a >{{title}}: <em>{{year}}</em></a></li> -->
+					</ul>
+				</div>
+					
+				
 			</div>
 			<div class="title-detail-container">	
 				<div id="title-detail">
@@ -43,6 +63,7 @@
 						 <span class="flag-yes" v-show="funscore > 50">:)</p>
 					</div>
 					<div id="detail-main">
+						Based on: {{viewTitleSource}}<br>
 						Screenplay: {{viewTitleScreenplay}}<br>
 						Running Time:{{viewTitleTime}}<br>
 						Language: {{viewTitleLang}} <br>
@@ -57,11 +78,12 @@
 
 						<h4>Summary:</h4>
 						<p>{{viewTitleSummary}}</p> 
+						<br>
 						<h4>Review: </h4>
 						<p>{{viewTitleReview}}</p>
 					</div>	
 					<figure class="title-poster">
-						<img v-bind:src="poster" alt="">
+						<img v-bind:src="viewTitlePoster" alt="">
 					</figure>
 					Reader Likes: {{ readerResp }}% <button v-on:click="addLike">Like</button> <button v-on:click="addDislike">DisLike</button>
 				</div>
